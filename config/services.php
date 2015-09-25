@@ -38,6 +38,6 @@ return [
     'facebook' => [
         'client_id' => '1637256469877794',
         'client_secret' => 'ced167bad8aff36e31bf204567464851',
-        'redirect' => 'http://buraz.app:8000/auth/facebook/callback',
+        'redirect' => 'http://' . env('BASE_DOMAIN') . '/auth/facebook/callback',
     ],
 ];
