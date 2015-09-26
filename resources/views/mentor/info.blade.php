@@ -28,7 +28,7 @@
             </tbody>
         </table>
         @else
-        <h3>Trenutno nemaš Malih Buraza, čim ti jedan/na bude dodijeljen bit češ obaviješten/a mailom.</h3>
+        <h3>Trenutno nemaš Malih Buraza, čim ti jedan/na bude dodijeljen bit ćeš obaviješten/a mailom.</h3>
         @endif
     </div>
 </div>
