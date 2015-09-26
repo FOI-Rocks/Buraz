@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mentor;
+use App\Student;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -15,7 +17,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-        return view('homepage');
+        return view('homepage')
+            ->with('mentorNum', Mentor::count())
+            ->with('studentNum', Student::count());
     }
 
     /**

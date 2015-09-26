@@ -44,6 +44,23 @@
                 </p>
             </div>
         </div>
+        <div class="row">
+            <h3>Trenutno registrirano:</h3>
+            <div class="col-lg-4 col-lg-offset-2" style="color: #000; font-size: 26px;">
+                <div class="well well-lg">
+                    <b>Veliki Burazi</b>
+                    <br>
+                    {{ $mentorNum }}
+                </div>
+            </div>
+            <div class="col-lg-4" style="color: #000; font-size: 26px;">
+                <div class="well well-lg">
+                    <b>Mali Burazi</b>
+                    <br>
+                    {{ $studentNum }}
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Download Section -->
