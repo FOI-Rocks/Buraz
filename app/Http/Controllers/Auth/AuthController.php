@@ -64,13 +64,11 @@ class AuthController extends Controller
 
         if($account != null) {
             Auth::login($account);
-            switch($target) {
-                case 'mentor':
-                    return redirect()
-                        ->route('mentor.info');
-                case 'student':
-                    return redirect()
-                        ->route('student.info');
+            if(Auth::user()->mentor_id != null) {
+                return redirect()->route('mentor.info');
+            }
+            if(Auth::user()->student_id != null) {
+                return redirect()->route('student.info');
             }
         }
 
