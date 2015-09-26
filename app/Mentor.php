@@ -32,6 +32,11 @@ class Mentor extends Model
         'visibility' => 'in:0,1',
     ];
 
+    // Relationships
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
+
     public function littleBros() {
         return Student::where('mentor_id', $this->user_id)->get();
     }

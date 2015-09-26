@@ -94,7 +94,7 @@ class AuthController extends Controller
                             'header' => 'Postao/la si Veliki Buraz!',
                             'paragraphs' => [
                                 'Hvala ti na registraciji u našu bazu Velikih Buraza! Tvoj posao je gotov, samo pričekaj da ti Mali Buraz bude dodijeljen nasumičnim odabirom. Ukoliko te ikad zatreba, Mali Buraz će dobiti tvoje kontakt podatke sa kojima ti se može javiti.',
-                                'Proces dodjele može potrajati neko vrijeme ovisno o količini dostupnih Velikih Buraza te interesu Malih Buraza. No kada se to dogodi, bit ćeš obaviješten/a mailom!',
+                                'Proces dodjele može potrajati neko vrijeme ovisno o količini dostupnih Velikih Buraza te interesu Malih Buraza. Logiranjem u korisnički panel za Velike Buraze možeš provjeriti ukoliko ti je dodijeljen mali buraz.',
                             ]
                         ],
                         function ($message) use ($account) {
@@ -108,9 +108,11 @@ class AuthController extends Controller
                     ->route('mentor.profile')
                     ->with('info', 'Dopuni prazna polja i označi svoj korisnički račun kao aktivan da bi ušla/o u bazu velikih buraza!');
             case 'student':
-                Student::create([
+                // Create student
+                $student = Student::create([
                     'user_id' => $account->id
                 ]);
+                // Send welcome mail
                 if($account->email != null) {
                     Mail::send(
                         'email.master',
@@ -128,6 +130,11 @@ class AuthController extends Controller
                         }
                     );
                 }
+
+                // Assign a big bro and send notification email
+                $student->assignBigBro();
+                $student->sendBigBroNotificationEmail();
+
                 return redirect()
                     ->route('student.profile')
                     ->with('info', 'Dopuni prazna polja i spremi informacije o sebi!');

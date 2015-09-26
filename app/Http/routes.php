@@ -36,3 +36,7 @@ Route::get('/student/login/go', ['as' => 'student.login.go', 'uses' => 'Student\
 Route::get('/auth/facebook', ['as' => 'auth.facebook', 'uses' => 'Auth\AuthController@redirectToProvider']);
 Route::get('/auth/facebook/callback', ['as' => 'auth.facebook.callback', 'uses' => 'Auth\AuthController@handleProviderCallback']);
 Route::get('/auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
+
+Route::get('/test', function() {
+   return Auth::user()->student->sendBigBroNotificationEmail();
+});
