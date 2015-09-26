@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Igor Rinkovec">
+    <meta name="og:image" content="{{ asset('img/fb-thumbnail.png') }}">
 
     <title>@yield('header') - FOI Buraz</title>
 
