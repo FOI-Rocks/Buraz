@@ -64,10 +64,10 @@ class AuthController extends Controller
 
         if($account != null) {
             Auth::login($account);
-            if(Auth::user()->mentor != null) {
+            if($account->mentor != null) {
                 return redirect()->route('mentor.info');
             }
-            if(Auth::user()->student != null) {
+            if($account->student != null) {
                 return redirect()->route('student.info');
             }
         }
