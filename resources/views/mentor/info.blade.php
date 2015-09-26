@@ -5,6 +5,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
+        @if(count($littleBros) > 0)
         <h3>Tvoji mali burazi:</h3>
         <table class="table table-hover">
             <thead>
@@ -26,6 +27,9 @@
                 @endforeach
             </tbody>
         </table>
+        @else
+        <h3>Trenutno nemaš Malih Buraza, čim ti jedan/na bude dodijeljen bit češ obaviješten/a mailom.</h3>
+        @endif
     </div>
 </div>
 @endsection

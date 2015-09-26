@@ -13,7 +13,7 @@
                         FOI <img style="height: 95px; widht: auto; margin-top: -20px;" src="{{ asset("img/logo.png") }}">
                         </h1>
                         <p class="intro-text">
-                            <b>Neslužbeni projekt studentskog mentorstva brucošima</b>
+                            <b>Neslužbeni projekt studentskog mentorstva brucošima/cama</b>
                             <br>
                             Dodjeli si svog "velikog buraza" i on će biti uz tebe sa informacijama iz prve ruke, kad i ako ti to zatreba.
                         </p>
@@ -32,10 +32,10 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>O BURAZ PROJEKTU</h2>
                 <p>
-                    Ovo je eksperimentalni i neslužbeni projekt kojim spajamo dobrovoljne studente starijih godina (tzv. velike buraze) koji žele podjeliti svoje savjete i iskustva iz prve ruke brucošima (tzv. malim burazima).
+                    Ovo je eksperimentalni i neslužbeni projekt kojim spajamo dobrovoljne studente/ice starijih godina (tzv. velike buraze) koji žele podjeliti svoje savjete i iskustva iz prve ruke brucošima/cama (tzv. malim burazima).
                 </p>
                 <p>
-                    Princip je vrlo jednostavan, stariji studenti koji žele sudjelovati nasumično se dodjele svakom brucošu koji zatraži svog buraza. Mali buraz tada dobije kontakt informacije (facebook ime, e-mail, telefon) kojim se može, ali i nemora javiti. Svakako preporučamo da se javite svom velikom burazu kad vam se dodjeli, no nije obavezno, on vam može biti u pripravnosti ako ga ikad zatrebate.
+                    Princip je vrlo jednostavan, stariji studenti/ce koji žele sudjelovati nasumično se dodjele svakom brucošu/ici koji zatraži svog buraza. Mali buraz tada dobije kontakt informacije (facebook ime, e-mail, telefon) svog mentora kojem se može, ali i nemora javiti. Svakako preporučamo da se javite svom velikom burazu kad vam se dodjeli, no nije obavezno, on vam može biti u pripravnosti ako ga ikad zatrebate.
                 </p>
                 <p>
                     <b>Sa čime vam veliki buraz može pomoći?</b>
@@ -62,7 +62,7 @@
     <section id="about" class="container text-center" style="margin-top: 100px;">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <a href="{{ route('mentor.login') }}">Stariji si student? Postani veliki buraz!</a>
+                <a href="{{ route('mentor.login') }}">Stariji si student/ica? Postani veliki buraz!</a>
             </div>
         </div>
     </section>
