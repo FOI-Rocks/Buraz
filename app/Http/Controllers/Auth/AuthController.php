@@ -94,7 +94,7 @@ class AuthController extends Controller
                             'header' => 'Postao/la si Veliki Buraz!',
                             'paragraphs' => [
                                 'Hvala ti na registraciji u našu bazu Velikih Buraza! Tvoj posao je gotov, samo pričekaj da ti Mali Buraz bude dodijeljen nasumičnim odabirom. Ukoliko te ikad zatreba, Mali Buraz će dobiti tvoje kontakt podatke sa kojima ti se može javiti.',
-                                'Proces dodjele može potrajati neko vrijeme ovisno o količini dostupnih Velikih Buraza te interesu Malih Buraza. Logiranjem u korisnički panel za Velike Buraze možeš provjeriti ukoliko ti je dodijeljen mali buraz.',
+                                'Proces dodjele može potrajati neko vrijeme ovisno o količini dostupnih Velikih Buraza te interesu Malih Buraza. Logiranjem u korisnički panel za Velike Buraze možeš provjeriti ukoliko ti je dodijeljen Mali Buraz.',
                             ]
                         ],
                         function ($message) use ($account) {

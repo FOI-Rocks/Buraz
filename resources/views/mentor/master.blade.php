@@ -53,7 +53,7 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Izbornik</a>
+                <a href="#menu-toggle" class="btn btn-default visible-sm" id="menu-toggle">Izbornik</a>
                 @yield('content')
             </div>
         </div>
