@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('fbid');
             $table->integer('study_id');
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('avatar_url');
             $table->rememberToken();
             $table->timestamps();

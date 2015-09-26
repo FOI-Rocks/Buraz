@@ -7,6 +7,7 @@ use App\Student;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Validator;
 use Socialite;
 use App\Http\Controllers\Controller;
@@ -86,6 +87,23 @@ class AuthController extends Controller
                 Mentor::create([
                     'user_id' => $account->id
                 ]);
+                if($account->email != null) {
+                    Mail::send(
+                        'email.master',
+                        [
+                            'header' => 'Postao/la si Veliki Buraz!',
+                            'paragraphs' => [
+                                'Hvala ti na registraciji u našu bazu Velikih Buraza! Tvoj posao je gotov, samo pričekaj da ti Mali Buraz bude dodijeljen nasumičnim odabirom. Ukoliko te ikad zatreba, Mali Buraz će dobiti tvoje kontakt podatke sa kojima ti se može javiti.',
+                                'Proces dodjele može potrajati neko vrijeme ovisno o količini dostupnih Velikih Buraza te interesu Malih Buraza. No kada se to dogodi, bit ćeš obaviješten/a mailom!',
+                            ]
+                        ],
+                        function ($message) use ($account) {
+                            $message->from('noreply@foi.rocks', 'FOI Buraz');
+                            $message->to($account->email, $account->name);
+                            $message->subject('🎈Uspješno si se registrirao/la kao Veliki Buraz!');
+                        }
+                    );
+                }
                 return redirect()
                     ->route('mentor.profile')
                     ->with('info', 'Dopuni prazna polja i označi svoj korisnički račun kao aktivan da bi ušla/o u bazu velikih buraza!');
@@ -93,6 +111,23 @@ class AuthController extends Controller
                 Student::create([
                     'user_id' => $account->id
                 ]);
+                if($account->email != null) {
+                    Mail::send(
+                        'email.master',
+                        [
+                            'header' => 'Postao/la si Mali Buraz!',
+                            'paragraphs' => [
+                                'Hvala ti na registraciji u našu bazu Malih Buraza! Uskoro češ primiti mail s kontakt informacijama od tvog Velikog Buraza. Ukoliko imaš bilo kakvih pitanja, nemoj se ustručavati kontaktirati svog mentora/icu, oni su se sami prijavili upravo kako bi tebi pomogli.',
+                                'Kad primiš kontakt informacije o svom Velikom Burazu, možeš mu/joj se javiti i predstaviti jer oni nemaju tvoje kontakt informacije. Ovo naravno nije obavezno, ali bi naravno bilo u skladu s bontonom. :)',
+                            ]
+                        ],
+                        function ($message) use ($account) {
+                            $message->from('noreply@foi.rocks', 'FOI Buraz');
+                            $message->to($account->email, $account->name);
+                            $message->subject('🎈Uspješno si se registrirao/la kao Mali Buraz!');
+                        }
+                    );
+                }
                 return redirect()
                     ->route('student.profile')
                     ->with('info', 'Dopuni prazna polja i spremi informacije o sebi!');
