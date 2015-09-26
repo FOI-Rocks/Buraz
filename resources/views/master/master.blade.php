@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Igor Rinkovec">
-    <meta name="og:image" content="{{ asset('img/fb-thumbnail.png') }}">
+    <meta property="og:title" content="FOI Buraz" />
+    <meta property="og:url" content="http://buraz.foi.rocks/" />
+    <meta property="og:description" content="Neslužbeni program studenskog mentorstva Fakulteta organizacije i informatike." />
+    <meta property="og:image" content="{{ asset('img/fb-thumbnail.png') }}">
 
     <title>@yield('header') - FOI Buraz</title>
 
