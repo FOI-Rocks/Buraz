@@ -79,7 +79,7 @@
     <section id="about" class="container text-center" style="margin-top: 100px;">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <a href="{{ route('mentor.login') }}">Stariji si student/ica? Postani veliki buraz!</a>
+                <a href="{{ route('mentor.login') }}" style="font-size: 18px;">Stariji si student/ica? Postani veliki buraz!</a>
             </div>
         </div>
     </section>
