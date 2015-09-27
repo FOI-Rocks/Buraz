@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
         @if($mentor == null)
-            <h3>Trenutno ti nije dodjeljen veliki buraz, kada ti on bude dodjeljen bit češ obaviješten/a mailom!</h3>
+            <h3>Trenutno ti nije dodjeljen Veliki Buraz, kada ti on bude dodjeljen bit ćeš obaviješten/a mailom!</h3>
         @else
         <br>
         <div class="panel panel-info">

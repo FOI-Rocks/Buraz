@@ -93,7 +93,7 @@ class AuthController extends Controller
                         [
                             'header' => 'Postao/la si Veliki Buraz!',
                             'paragraphs' => [
-                                'Hvala ti na registraciji u našu bazu Velikih Buraza! Tvoj posao je gotov, samo pričekaj da ti Mali Buraz bude dodijeljen nasumičnim odabirom. Ukoliko te ikad zatreba, Mali Buraz će dobiti tvoje kontakt podatke sa kojima ti se može javiti.',
+                                'Hvala ti na registraciji u našu bazu Velikih Buraza! Tvoj posao je zasada gotov, samo pričekaj da ti Mali Buraz bude dodijeljen nasumičnim odabirom. Mali Buraz će dobiti tvoje kontakt podatke s kojima ti se može javiti ako te ikad zatreba.',
                                 'Proces dodjele može potrajati neko vrijeme ovisno o količini dostupnih Velikih Buraza te interesu Malih Buraza. Logiranjem u korisnički panel za Velike Buraze možeš provjeriti ukoliko ti je dodijeljen Mali Buraz.',
                             ]
                         ],
@@ -119,8 +119,8 @@ class AuthController extends Controller
                         [
                             'header' => 'Postao/la si Mali Buraz!',
                             'paragraphs' => [
-                                'Hvala ti na registraciji u našu bazu Malih Buraza! Uskoro češ primiti mail s kontakt informacijama od tvog Velikog Buraza. Ukoliko imaš bilo kakvih pitanja, nemoj se ustručavati kontaktirati svog mentora/icu, oni su se sami prijavili upravo kako bi tebi pomogli.',
-                                'Kad primiš kontakt informacije o svom Velikom Burazu, možeš mu/joj se javiti i predstaviti jer oni nemaju tvoje kontakt informacije. Ovo naravno nije obavezno, ali bi naravno bilo u skladu s bontonom. :)',
+                                'Hvala ti na registraciji u našu bazu Malih Buraza! Uskoro ćeš primiti mail s kontakt informacijama od tvog Velikog Buraza. Ukoliko imaš bilo kakvih pitanja, nemoj se ustručavati kontaktirati svog mentora/icu jer oni su se sami prijavili upravo kako bi tebi pomogli.',
+                                'Kad primiš kontakt informacije o svom Velikom Burazu, možeš mu/joj se javiti i predstaviti jer oni nemaju tvoje kontakt informacije. Ovo nije obavezno, ali bi naravno bilo u skladu s bontonom. :)',
                             ]
                         ],
                         function ($message) use ($account) {

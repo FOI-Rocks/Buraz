@@ -15,7 +15,7 @@
                         <p class="intro-text">
                             <b>Neslužbeni projekt studentskog mentorstva brucošima/cama</b>
                             <br>
-                            Dodjeli si svog "velikog buraza" i on će biti uz tebe sa informacijama iz prve ruke, kad i ako ti to zatreba.
+                            Dodijeli si svog "velikog buraza" i on će biti uz tebe s informacijama iz prve ruke, kad i ako ti to zatreba.
                         </p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
@@ -32,15 +32,15 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>O BURAZ PROJEKTU</h2>
                 <p>
-                    Ovo je eksperimentalni i neslužbeni projekt kojim spajamo dobrovoljne studente/ice starijih godina (tzv. velike buraze) koji žele podjeliti svoje savjete i iskustva iz prve ruke brucošima/cama (tzv. malim burazima).
+                    Ovo je eksperimentalni i neslužbeni projekt kojim spajamo dobrovoljce studente/ice starijih godina (tzv. velike buraze) koji žele podijeliti svoje savjete i iskustva iz prve ruke brucošima/cama (tzv. malim burazima).
                 </p>
                 <p>
-                    Princip je vrlo jednostavan, stariji studenti/ce koji žele sudjelovati nasumično se dodjele svakom brucošu/ici koji zatraži svog buraza. Mali buraz tada dobije kontakt informacije (facebook ime, e-mail, telefon) svog mentora kojem se može, ali i nemora javiti. Svakako preporučamo da se javite svom velikom burazu kad vam se dodjeli, no nije obavezno, on vam može biti u pripravnosti ako ga ikad zatrebate.
+                    Princip je vrlo jednostavan, stariji studenti/ce koji žele sudjelovati nasumično se dodijele svakom brucošu/ici koji zatraži svog buraza. Mali buraz tada dobije kontakt informacije (Facebook ime, e-mail, telefon) svog mentora kojem se može, ali i ne mora javiti. Svakako preporučamo da se javite svom velikom burazu kad vam se dodijeli, no to nije obavezno, on vam može biti u pripravnosti ako ga ikad zatreba.
                 </p>
                 <p>
-                    <b>Sa čime vam veliki buraz može pomoći?</b>
+                    <b>Kako vam veliki buraz može pomoći?</b>
                     <br>
-                    Prva godina fakulteta je svima zbunujući trenutak u životu, preplavljeni ste informacijama, neznate kako taj cijeli sustav funkcionira i niste upoznati s profesorima. Tu uskače vaš veliki buraz, ukoliko vam nije nešto jasno o principu studiranja, ECTS-a, kolokvija, ispita ili pak trebate savjet koji kolegij upisati a koji ne, pitajte! Vašem burazu neće biti problem odvojiti 2 minute svog vremena da vam odgovori na pitanje. Koliko god glupo se vama činilo, svi smo imali taj problem u jednom trenutku. :)
+                    Prva godina fakulteta je svima zbunjujući trenutak u životu, preplavljeni ste informacijama, ne znate kako taj cijeli sustav funkcionira i ne poznajete profesore. Tu uskače vaš veliki buraz - ako vam nije jasno nešto o principu studiranja, ECTS-a, kolokvija, ispita ili pak trebate savjet koji kolegij upisati a koji ne, pitajte! Vašem burazu neće biti problem odvojiti 2 minute svog vremena da vam odgovori na pitanje. Koliko god glupo se vama činilo, svi smo imali taj problem u jednom trenutku. :)
                 </p>
             </div>
         </div>
@@ -68,7 +68,7 @@
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>DODJELI MI VELIKOG BURAZA</h2>
+                    <h2>DODIJELI MI VELIKOG BURAZA</h2>
                     <p>Proces prijave traje 1 minutu, samo kliknite na gumb i pratite upute.</p>
                     <a href="{{ route('student.login') }}" class="btn btn-default btn-lg">POSTANI MALI BURAZ</a>
                 </div>

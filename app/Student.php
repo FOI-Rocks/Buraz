@@ -74,7 +74,7 @@ class Student extends Model
                 [
                     'header' => 'Dodjeljen ti je Veliki Buraz!',
                     'paragraphs' => [
-                        'Nasumičnim odabirom ti je dodjeljen Veliki Buraz. Ispod možeš pronaći njegove/njezine kontakt informacije. Ukoliko imaš bilo kakvih pitanja ili ćeš ih imati kroz godinu, svog Velikog Buraza uvijek možeš pitati. :) Ako ti trenutno ništa ne pada na pamet, slobodno ga/ju pozdravi!',
+                        'Nasumičnim odabirom ti je dodjeljen Veliki Buraz. Ispod možeš pronaći njegove/njezine kontakt podatke. Ukoliko imaš bilo kakvih pitanja ili ćeš ih imati kroz godinu, svog Velikog Buraza uvijek možeš pitati. :) Ako ti trenutno ništa ne pada na pamet, slobodno ga/ju pozdravi!',
                         'Ime: ' . $bigBro->name,
                         'E-mail: ' . $bigBro->email,
                         'Telefon: ' . $bigBro->mentor->phone,
@@ -83,7 +83,7 @@ class Student extends Model
                 function ($message) use ($account) {
                     $message->from('noreply@foi.rocks', 'FOI Buraz');
                     $message->to($account->email, $account->name);
-                    $message->subject('🎈Dodjeljen ti je Veliki Buraz!');
+                    $message->subject('🎈Dodijeljen ti je Veliki Buraz!');
                 }
             );
 
