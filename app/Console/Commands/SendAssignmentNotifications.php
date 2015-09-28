@@ -45,7 +45,7 @@ class SendAssignmentNotifications extends Command
             echo $bro;
             if(isset($bro['email']) && $bro['email'] != null) {
                 echo 'Test1';
-                $s->sendBigBroNotificationEmail(true);
+                //$s->sendBigBroNotificationEmail(true);
             }
         }
     }
