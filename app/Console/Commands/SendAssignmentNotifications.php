@@ -40,10 +40,8 @@ class SendAssignmentNotifications extends Command
     {
         $students = Student::where('notified', false)->get();
         foreach($students as $s) {
-            echo 'Test0';
             $bro = $s->bigBro();
             if(isset($bro['email']) && $bro['email'] != null) {
-                var_dump($s);
                 $s->sendBigBroNotificationEmail(true);
             }
         }
