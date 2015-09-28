@@ -20,8 +20,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/mentor/profile', ['as' => 'mentor.profile', 'uses' => 'Mentor\MentorController@showProfile']);
     Route::post('/mentor/profile', ['as' => 'mentor.store', 'uses' => 'Mentor\MentorController@storeProfile']);
 });
-Route::get('/mentor/login', ['as' => 'mentor.login', 'uses' => 'Mentor\MentorController@showLogin']);
-Route::get('/mentor/login/go', ['as' => 'mentor.login.go', 'uses' => 'Mentor\MentorController@doLogin']);
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/mentor/login', ['as' => 'mentor.login', 'uses' => 'Mentor\MentorController@showLogin']);
+    Route::get('/mentor/login/go', ['as' => 'mentor.login.go', 'uses' => 'Mentor\MentorController@doLogin']);
+});
+
 
 // Student CMS
 Route::group(['middleware' => 'auth'], function () {
@@ -29,8 +32,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/student/profile', ['as' => 'student.profile', 'uses' => 'Student\StudentController@showProfile']);
     Route::post('/student/profile', ['as' => 'student.store', 'uses' => 'Student\StudentController@storeProfile']);
 });
-Route::get('/student/login', ['as' => 'student.login', 'uses' => 'Student\StudentController@showLogin']);
-Route::get('/student/login/go', ['as' => 'student.login.go', 'uses' => 'Student\StudentController@doLogin']);
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/student/login', ['as' => 'student.login', 'uses' => 'Student\StudentController@showLogin']);
+    Route::get('/student/login/go', ['as' => 'student.login.go', 'uses' => 'Student\StudentController@doLogin']);
+});
+
 
 // Authentication
 Route::get('/auth/facebook', ['as' => 'auth.facebook', 'uses' => 'Auth\AuthController@redirectToProvider']);

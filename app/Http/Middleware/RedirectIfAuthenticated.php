@@ -35,10 +35,10 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            if($this->auth->user()->mentor_id != null) {
+            if(count($this->auth->user()->mentor)) {
                 return redirect('/mentor');
             }
-            if($this->auth->user()->student_id != null) {
+            if(count($this->auth->user()->student)) {
                 return redirect('/student');
             }
             return redirect('/');
