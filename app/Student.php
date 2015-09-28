@@ -36,46 +36,54 @@ class Student extends Model
 
     // Matching
     public function bigBro() {
-        return User::where('id', $this->mentor_id)->first();
+        $mentor = Mentor::where('id', $this->mentor_id)->first();
+        return User::where('id', $mentor->user_id)->first();
     }
 
     public function assignBigBro($force = false) {
-        if(Config::get('app.matching') || $force) {
-            // Get the best bro
-            $studyId = $this->user->study_id;
+        if($this->user->study_id != 0) {
+            if(Config::get('app.matching') || $force) {
+                // Get the best bro
+                $studyId = $this->user->study_id;
+                $minCount = Mentor::whereHas('user', function($query) use ($studyId) {
+                    $query->where('study_id', $studyId);
+                })
+                    ->min('student_count');
 
-            $minCount = Mentor::min('student_count');
-            $bigBro = Mentor::with(['user' => function($query) use ($studyId) {
-                $query->where('study_id', $studyId);
-            }])
-                ->where('visible', 1)
-                ->where('student_count', $minCount)
-                ->orderByRaw('RAND()')
-                ->first();
-            // Increment his little bros counter
-            $bigBro->student_count++;
-            $bigBro->save();
+                $mentor = User::whereHas('mentor', function($query) use ($minCount) {
+                    $query->where('visible', true)
+                        ->whereNotNull('phone')
+                        ->where('student_count', $minCount);
+                })
+                    ->whereNotNull('email')
+                    ->where('study_id', $studyId)
+                    ->orderByRaw('RAND()')
+                    ->with('mentor')
+                    ->first();
 
-            // Assign the big bro
-            $this->mentor_id = $bigBro->id;
-            $this->save();
+                if($mentor == null)
+                    return null;
 
-            return $bigBro;
+                // Increment his little bros counter
+                $mentorMentor = $mentor->mentor;
+                $mentorMentor->student_count++;
+                $mentorMentor->save();
+
+                // Assign the big bro
+                $this->mentor_id = $mentorMentor->id;
+                $this->save();
+
+                return $mentor;
+            }
         }
     }
 
     public function sendBigBroNotificationEmail($force = false) {
         if(Config::get('app.matching') || $force) {
-            echo 'Test2';
             $bigBro = $this->bigBro();
-            echo 'Test3';
             $account = $this->user;
 
-            var_dump($bigBro);
-            var_dump($account);
-
             // Send e-mail to student
-            echo 'Test4';
             Mail::send(
                 'email.master',
                 [
@@ -95,7 +103,6 @@ class Student extends Model
             );
 
             // Mark as sent
-            echo 'Test5';
             $this->notified = true;
             $this->save();
         }

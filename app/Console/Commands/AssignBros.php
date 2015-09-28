@@ -40,7 +40,14 @@ class AssignBros extends Command
     {
         $students = Student::where('mentor_id', null)->get();
         foreach($students as $s) {
-            $s->assignBigBro(true);
+            $bro = $s->assignBigBro(true);
+            if($bro != null) {
+                $same = $s->user->study_id == $bro->study_id;
+                $this->info(($same?"Y":"N").($bro->mentor->visible?"Y":"N") . " " . $s->user->name . ": " . $s->user->email . " -> " . $bro->name . ": " . $bro->email);
+            }
+            else {
+                $this->error('Error occurred matching: ' . $s->name);
+            }
         }
     }
 }
