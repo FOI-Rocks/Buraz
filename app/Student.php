@@ -102,7 +102,7 @@ class Student extends Model
                 function ($message) use ($account) {
                     $message->from('noreply@foi.rocks', 'FOI Buraz');
                     $message->to($account->email, $account->name);
-                    $message->subject('👥git pDodijeljen ti je Veliki Buraz!');
+                    $message->subject('👥Dodijeljen ti je Veliki Buraz!');
                 }
             );
 
