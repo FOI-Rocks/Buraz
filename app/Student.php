@@ -71,6 +71,9 @@ class Student extends Model
             echo 'Test3';
             $account = $this->user;
 
+            var_dump($bigBro);
+            var_dump($account);
+
             // Send e-mail to student
             echo 'Test4';
             Mail::send(
