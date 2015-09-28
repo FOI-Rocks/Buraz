@@ -42,6 +42,7 @@ class SendAssignmentNotifications extends Command
         foreach($students as $s) {
             echo 'Test0';
             $bro = $s->bigBro();
+            echo 'test';
             if($bro->email != null && $bro->mentor->phone != '') {
                 echo 'Test1';
                 $s->sendBigBroNotificationEmail(true);
