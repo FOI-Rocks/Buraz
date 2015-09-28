@@ -42,7 +42,7 @@ class Student extends Model
     public function assignBigBro($force = false) {
         if(Config::get('app.matching') || $force) {
             // Get the best bro
-            echo 'Test2';
+            /*echo 'Test2';
             $studyId = $this->user->study_id;
             echo 'Test3';
             $minCount = Mentor::min('student_count');
@@ -64,7 +64,7 @@ class Student extends Model
             $this->save();
 
             echo 'Test6';
-            return $bigBro;
+            return $bigBro;*/
         }
     }
 
