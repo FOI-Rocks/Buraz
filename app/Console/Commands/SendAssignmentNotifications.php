@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Student;
 use Illuminate\Console\Command;
 
 class SendAssignmentNotifications extends Command
