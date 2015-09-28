@@ -42,7 +42,9 @@ class Student extends Model
     public function assignBigBro($force = false) {
         if(Config::get('app.matching') || $force) {
             // Get the best bro
+            echo 'Test2';
             $studyId = $this->user->study_id;
+            echo 'Test3';
             $minCount = Mentor::min('student_count');
             $bigBro = Mentor::with(['user' => function($query) use ($studyId) {
                 $query->where('study_id', $studyId);
@@ -52,13 +54,16 @@ class Student extends Model
                 ->orderByRaw('RAND()')
                 ->first();
             // Increment his little bros counter
+            echo 'Test4';
             $bigBro->student_count++;
             $bigBro->save();
 
             // Assign the big bro
+            echo 'Test5';
             $this->mentor_id = $bigBro->id;
             $this->save();
 
+            echo 'Test6';
             return $bigBro;
         }
     }
