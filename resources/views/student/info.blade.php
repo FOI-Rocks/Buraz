@@ -5,7 +5,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
-        @if($mentor == null || true)
+        @if($mentor == null)
             <h3>Trenutno ti nije dodjeljen Veliki Buraz, kada ti on bude dodjeljen bit ćeš obaviješten/a mailom!</h3>
         @else
         <br>
