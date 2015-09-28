@@ -54,6 +54,13 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <a href="#menu-toggle" class="btn btn-default visible-sm visible-xs" id="menu-toggle">Izbornik</a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info">
+                            Trenutno se upotrebljava eksperimentalni algoritam dodjeljivanja Buraza, zbog toga moguće su anomalije u njegovom radu. Ukoliko dobijete Velikog Buraza koji nema ispunjene osobne podatke, nije s vašeg smjera ili primijetite bilo kakve pogreške u radu cijelog sustava, kontaktirajte me čim prije na <a href="mailto:igor.rinkovec+buraz@gmail.com">igor.rinkovec+buraz@gmail.com</a> kako bi se problem ispravio. Hvala!
+                        </div>
+                    </div>
+                </div>
                 @yield('content')
             </div>
         </div>
