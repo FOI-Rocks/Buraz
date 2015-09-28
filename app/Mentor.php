@@ -38,6 +38,6 @@ class Mentor extends Model
     }
 
     public function littleBros() {
-        return Student::where('mentor_id', $this->user_id)->get();
+        return Student::where('mentor_id', $this->id)->get();
     }
 }
