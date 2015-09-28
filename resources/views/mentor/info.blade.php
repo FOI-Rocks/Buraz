@@ -5,7 +5,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
-        @if(count($littleBros) > 0)
+        @if(count($littleBros) > 100)
         <h3>Tvoji mali burazi:</h3>
         <table class="table table-hover">
             <thead>
