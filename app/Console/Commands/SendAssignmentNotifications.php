@@ -43,7 +43,7 @@ class SendAssignmentNotifications extends Command
             echo 'Test0';
             $bro = $s->bigBro();
             echo 'test';
-            if($bro->email != null && $bro->mentor->phone != '') {
+            if(isset($bro->email) && $bro->email != null && $bro->mentor->phone != '') {
                 echo 'Test1';
                 $s->sendBigBroNotificationEmail(true);
             }
