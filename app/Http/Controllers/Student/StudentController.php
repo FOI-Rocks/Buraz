@@ -47,6 +47,14 @@ class StudentController extends Controller
         $user->fill($input);
         $user->save();
 
+        if($user->student->mentor_id == null) {
+            // Assign a big bro and send notification email
+            $bro = $user->student->assignBigBro();
+            if($bro != null) {
+                $user->student->sendBigBroNotificationEmail();
+            }
+        }
+
         return redirect()
             ->route('student.profile');
     }

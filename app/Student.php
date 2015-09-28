@@ -37,7 +37,10 @@ class Student extends Model
     // Matching
     public function bigBro() {
         $mentor = Mentor::where('id', $this->mentor_id)->first();
-        return User::where('id', $mentor->user_id)->first();
+        if($mentor != null) {
+            return User::where('id', $mentor->user_id)->first();
+        }
+        return null;
     }
 
     public function assignBigBro($force = false) {
@@ -76,6 +79,7 @@ class Student extends Model
                 return $mentor;
             }
         }
+        return null;
     }
 
     public function sendBigBroNotificationEmail($force = false) {
@@ -98,7 +102,7 @@ class Student extends Model
                 function ($message) use ($account) {
                     $message->from('noreply@foi.rocks', 'FOI Buraz');
                     $message->to($account->email, $account->name);
-                    $message->subject('🎈Dodijeljen ti je Veliki Buraz!');
+                    $message->subject('👥Dodijeljen ti je Veliki Buraz!');
                 }
             );
 

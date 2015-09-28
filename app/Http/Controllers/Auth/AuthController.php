@@ -131,10 +131,6 @@ class AuthController extends Controller
                     );
                 }
 
-                // Assign a big bro and send notification email
-                $student->assignBigBro();
-                $student->sendBigBroNotificationEmail();
-
                 return redirect()
                     ->route('student.profile')
                     ->with('info', 'Dopuni prazna polja i spremi informacije o sebi!');
