@@ -51,6 +51,7 @@ class Student extends Model
                 $minCount = Mentor::whereHas('user', function($query) use ($studyId) {
                     $query->where('study_id', $studyId);
                 })
+                    ->where('visible', 1)
                     ->min('student_count');
 
                 $mentor = User::whereHas('mentor', function($query) use ($minCount) {
