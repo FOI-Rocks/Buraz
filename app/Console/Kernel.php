@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Inspire::class,
         \App\Console\Commands\AssignBros::class,
         \App\Console\Commands\SendAssignmentNotifications::class,
+        \App\Console\Commands\SendEmail::class,
     ];
 
     /**

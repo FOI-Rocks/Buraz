@@ -47,3 +47,11 @@ Route::get('/auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthControlle
 Route::get('/brucosi', function() {
    return redirect()->route('student.login');
 });
+
+// Feedback forms
+Route::get('/anketa/mali-buraz', function() {
+    return view('forms.maliburaz');
+});
+Route::get('/anketa/veliki-buraz', function() {
+    return view('forms.velikiburaz');
+});
