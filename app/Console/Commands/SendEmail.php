@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Mentor;
 use App\Student;
+use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
 
@@ -40,6 +41,33 @@ class SendEmail extends Command
      */
     public function handle()
     {
+        $this->info("=== Sending e-mail to all users:");
+        // Student feedback
+        $users = User::all();
+        foreach($users as $s) {
+            $user = $s->user;
+            Mail::send('email.masterbutton',
+                [
+                    'header' => 'Rezultati ankete',
+                    'paragraphs' => [
+                        'Pozdrav ' . explode(' ', $user->name)[0] . ',<br>' .
+                        'prije nekoliko tjedana provela se anketa o iskustvima u prvoj godini održavanja Buraz programa studentskog mentorstva. Poziv za sudjelovanje dobili su oni sudionici kojima je Buraz bio dodijeljen do samog dana anketiranja. One velike Buraze koji ove godine nisu dobili svog malog Buraza pozivam da se prijave i druge godine kada imamo u planu neke zanimljive ideje da se uključi još više brucoša. :)',
+                        'Iskreno se zahvaljujem svima koji su sudjelovali u mojoj skromnoj anketi. Vaše reakcije su stvarno iznenađujuće pozitivne te mi je vrlo drago čuti da su se iz ovog jednostavnog koncepta izrodila brojna prijateljstva čemu rezultati ove ankete svjedoče. Nadam se da će se ovaj projekt pretvoriti u tradiciju te da će ovakav ogroman odaziv rasti iz godine u godinu.',
+                        'Ako vas zanimaju rezultati ankete, dvije kratke infografike već su dostupne na <a href="https://www.facebook.com/foi.rocks">FOI Rocks Facebook stranici</a>. Također, u nadolazećim tjednima biti će objavljivani desetci najboljih komentara i reakcija na dnevnoj bazi. Pozivam vas da 👍-ate page ukoliko vas zanima što su vaši kolege i kolegice odgovorili na neka zanimljiva pitanja o njihovim iskustvima.',
+                        '<a class="button" href="https://www.facebook.com/foi.rocks/posts/459977257538862">Dosta više priče, ja sam ovdje samo zbog slikica</a>',
+                        'Čao zdravo,<br>Igor Rinkovec.'
+                    ]
+                ],
+                function ($message) use($user) {
+                    $message->from('noreply@foi.rocks', 'FOI Buraz');
+                    $message->to($user->email, $user->ime);
+                    $message->subject('📊 Šarene slikice i neke brojke');
+                }
+            );
+            $this->info($user->name . " => SENT");
+        }
+
+        /*
         $this->info("=== Sending e-mail to students:");
         // Student feedback
         $students = Student::where('mentor_id', '<>', false)->get();
@@ -88,6 +116,6 @@ class SendEmail extends Command
                 }
             );
             $this->info($user->name . " => SENT");
-        }
+        }*/
     }
 }
