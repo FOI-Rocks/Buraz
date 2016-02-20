@@ -43,7 +43,7 @@ class SendEmail extends Command
     {
         $this->info("=== Sending e-mail to all users:");
         // Student feedback
-        $users = User::all();
+        $users = User::where('id', '>', 75)->whereNotNull('email')->get();;
         foreach($users as $user) {
             Mail::send('email.masterbutton',
                 [
