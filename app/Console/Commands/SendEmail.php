@@ -41,31 +41,6 @@ class SendEmail extends Command
      */
     public function handle()
     {
-        $this->info("=== Sending e-mail to all users:");
-        // Student feedback
-        $users = User::where('id', '>', 75)->whereNotNull('email')->get();;
-        foreach($users as $user) {
-            Mail::send('email.masterbutton',
-                [
-                    'header' => 'Rezultati ankete',
-                    'paragraphs' => [
-                        'Pozdrav ' . explode(' ', $user->name)[0] . ',<br>' .
-                        'prije nekoliko tjedana provela se anketa o iskustvima u prvoj godini održavanja Buraz programa studentskog mentorstva. Poziv za sudjelovanje dobili su oni sudionici kojima je Buraz bio dodijeljen do samog dana anketiranja. One velike Buraze koji ove godine nisu dobili svog malog Buraza pozivam da se prijave i druge godine kada imamo u planu neke zanimljive ideje da se uključi još više brucoša. :)',
-                        'Iskreno se zahvaljujem svima koji su sudjelovali u mojoj skromnoj anketi. Vaše reakcije su stvarno iznenađujuće pozitivne te mi je vrlo drago čuti da su se iz ovog jednostavnog koncepta izrodila brojna prijateljstva čemu rezultati ove ankete svjedoče. Nadam se da će se ovaj projekt pretvoriti u tradiciju te da će ovakav ogroman odaziv rasti iz godine u godinu.',
-                        'Ako vas zanimaju rezultati ankete, dvije kratke infografike već su dostupne na <a href="https://www.facebook.com/foi.rocks">FOI Rocks Facebook stranici</a>. Također, u nadolazećim tjednima na dnevnoj bazi će biti objavljivani desetci najboljih komentara i reakcija. Pozivam vas da 👍-ate page ukoliko vas zanima što su vaši kolege i kolegice odgovorili na neka zanimljiva pitanja o njihovim iskustvima.',
-                        '<a class="button" href="https://www.facebook.com/foi.rocks/posts/459977257538862">Dosta više priče, ja sam ovdje samo zbog slikica</a>',
-                        'Čao zdravo,<br>Igor Rinkovec.',
-                    ]
-                ],
-                function ($message) use($user) {
-                    $message->from('noreply@foi.rocks', 'FOI Buraz');
-                    $message->to($user->email, $user->ime);
-                    $message->subject('📊 Šarene slikice i neke brojke');
-                }
-            );
-            $this->info($user->name . " => SENT");
-        }
-
         /*
         $this->info("=== Sending e-mail to students:");
         // Student feedback
@@ -91,10 +66,11 @@ class SendEmail extends Command
             );
             $this->info($user->name . " => SENT");
         }
+        */
 
         $this->info("=== Sending e-mail to mentors:");
         // Mentor feedback
-        $mentors = Mentor::where('student_count', '>', 0)->get();
+        $mentors = Mentor::all();
         foreach($mentors as $m) {
             $user = $m->user;
             Mail::send('email.masterbutton',
@@ -102,19 +78,20 @@ class SendEmail extends Command
                     'header' => 'Pomozi sljedećoj generaciji brucoša!',
                     'paragraphs' => [
                         'Pozdrav ' . explode(' ', $user->name)[0] . ',<br>' .
-                        'semestar nam se bliži kraju, brucoši su se već privikli na studentski život pa to nekako i privodi ovaj cijeli projekt kraju ovoakademskogodišnje sezone. Ovo je prva godina izvođenja Buraz projekta, što upravo tebe čini pokusnim kunićem. S odazivom od 250+ ljudi očito je da postoji interes za ovakvim projektom s strane brucoša, ali i još veći s strane mentora što mi je iznimno drago. Upravo zbog toga bitan mi je tvoj feedback (ipak je poanta pokusnih kunića da iz njih izvučeš neke zaključke) kako bi druge godine mogli ovaj projekt učiniti još popularnijim i kvalitetnijim.',
-                        'Napravio sam ovu anketu upravo za tebe kako bi mi mogao/la prosljediti te ključne informacije za daljnji razvoj projekta. Neće ti trebati dulje od 2 minute, samo stisni na gumbić ispod i pomozi sljedećoj generaciji brucoša.',
-                        '<a class="button" href="http://buraz.foi.rocks/anketa/veliki-buraz">Riješi anketu</a>',
-                        'Ugodni blagdani i sretna ti cijela nova godina,<br>Igor Rinkovec.'
+                        'nadam se da još uvijek uživaš u punom sjaju ljeta, no dopusti mi da ti ukradem minutu života kako bi i ove godine pomogli stotinama studenata pri snalaženju u prvim mjesecima studiranja!',
+                        'Kako nam se nova akademska godina približava, to znači da ćemo opet viđati puno novih i zbunjenih lica po faksu. Upravo zbog toga bih te zamolio da uzmeš 30 sekundi svoga vremena i ponovo se uključiš u Buraz program kao Veliki Buraz. <a href="https://www.facebook.com/foi.rocks/photos/pcb.459977257538862/459977174205537/?type=3&theater">Feedback od prošle godine govori da je biti Veliki Buraz jako jednostavno.</a> A s druge strane, <a href="https://www.facebook.com/foi.rocks/photos/?tab=album&album_id=460922757444312">iznimno korisno</a>. Upravo zbog toga zaista nema razloga da se ne uključiš i olakšaš studiranje novoj generaciji. :)',
+                        'Svi tvoji podaci od prošle godine ostali su zabilježeni (iako si bio/bila Mali Buraz). Sve što trebaš učiniti je ulogirati se jednim klikom miša na linku ispod, otvoriti svoj profil i uključiti svoju vidljivost kako bi nam dao/dala doznanja da želiš da ti se dodijeli Mali Buraz.',
+                        '<a class="button" href="http://buraz.foi.rocks/mentor/login">Prijavi se</a>',
+                        'Ugodan ostatak ljeta i puno sreće na nadolazećem ispitnom roku :D,<br>Igor Rinkovec.'
                     ]
                 ],
                 function ($message) use($user) {
                     $message->from('noreply@foi.rocks', 'FOI Buraz');
                     $message->to($user->email, $user->ime);
-                    $message->subject('👥Ej buraz, kak\' ti je buraz!');
+                    $message->subject(' 🌍 Na mladima svijet ostaje!');
                 }
             );
             $this->info($user->name . " => SENT");
-        }*/
+        }
     }
 }
