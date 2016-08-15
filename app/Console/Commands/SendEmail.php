@@ -70,28 +70,31 @@ class SendEmail extends Command
 
         $this->info("=== Sending e-mail to mentors:");
         // Mentor feedback
-        $mentors = Mentor::all();
+        $mentors = Mentor::where('id', '>', 76)->get();
         foreach($mentors as $m) {
             $user = $m->user;
-            Mail::send('email.masterbutton',
-                [
-                    'header' => 'Pomozi sljedećoj generaciji brucoša!',
-                    'paragraphs' => [
-                        'Pozdrav ' . explode(' ', $user->name)[0] . ',<br>' .
-                        'nadam se da još uvijek uživaš u punom sjaju ljeta, no dopusti mi da ti ukradem minutu života kako bi i ove godine pomogli stotinama studenata pri snalaženju u prvim mjesecima studiranja!',
-                        'Kako nam se nova akademska godina približava, to znači da ćemo opet viđati puno novih i zbunjenih lica po faksu. Upravo zbog toga bih te zamolio da uzmeš 30 sekundi svoga vremena i ponovo se uključiš u Buraz program kao Veliki Buraz. <a href="https://www.facebook.com/foi.rocks/photos/pcb.459977257538862/459977174205537/?type=3&theater">Feedback od prošle godine govori da je biti Veliki Buraz jako jednostavno.</a> A s druge strane, <a href="https://www.facebook.com/foi.rocks/photos/?tab=album&album_id=460922757444312">iznimno korisno</a>. Upravo zbog toga zaista nema razloga da se ne uključiš i olakšaš studiranje novoj generaciji. :)',
-                        'Svi tvoji podaci od prošle godine ostali su zabilježeni (iako si bio/bila Mali Buraz). Sve što trebaš učiniti je ulogirati se jednim klikom miša na linku ispod, otvoriti svoj profil i uključiti svoju vidljivost kako bi nam dao/dala doznanja da želiš da ti se dodijeli Mali Buraz.',
-                        '<a class="button" href="http://buraz.foi.rocks/mentor/login">Prijavi se</a>',
-                        'Ugodan ostatak ljeta i puno sreće na nadolazećem ispitnom roku :D,<br>Igor Rinkovec.'
-                    ]
-                ],
-                function ($message) use($user) {
-                    $message->from('noreply@foi.rocks', 'FOI Buraz');
-                    $message->to($user->email, $user->ime);
-                    $message->subject(' 🌍 Na mladima svijet ostaje!');
-                }
-            );
-            $this->info($user->name . " => SENT");
+            if($user->email != NULL) {
+                Mail::send('email.masterbutton',
+                    [
+                        'header' => 'Pomozi sljedećoj generaciji brucoša!',
+                        'paragraphs' => [
+                            'Pozdrav ' . explode(' ', $user->name)[0] . ',<br>' .
+                            'nadam se da još uvijek uživaš u punom sjaju ljeta, no dopusti mi da ti ukradem minutu života kako bi i ove godine pomogli stotinama studenata pri snalaženju u prvim mjesecima studiranja!',
+                            'Kako nam se nova akademska godina približava, to znači da ćemo opet viđati puno novih i zbunjenih lica po faksu. Upravo zbog toga bih te zamolio da uzmeš 30 sekundi svoga vremena i ponovo se uključiš u Buraz program kao Veliki Buraz. <a href="https://www.facebook.com/foi.rocks/photos/pcb.459977257538862/459977174205537/?type=3&theater">Feedback od prošle godine govori da je biti Veliki Buraz jako jednostavno.</a> A s druge strane, <a href="https://www.facebook.com/foi.rocks/photos/?tab=album&album_id=460922757444312">iznimno korisno</a>. Upravo zbog toga zaista nema razloga da se ne uključiš i olakšaš studiranje novoj generaciji. :)',
+                            'Svi tvoji podaci od prošle godine ostali su zabilježeni (iako si bio/bila Mali Buraz). Sve što trebaš učiniti je ulogirati se jednim klikom miša na linku ispod, otvoriti svoj profil i uključiti svoju vidljivost kako bi nam dao/dala doznanja da želiš da ti se dodijeli Mali Buraz.',
+                            '<a class="button" href="http://buraz.foi.rocks/mentor/login">Prijavi se</a>',
+                            'Ugodan ostatak ljeta i puno sreće na nadolazećem ispitnom roku :D,<br>Igor Rinkovec.'
+                        ]
+                    ],
+                    function ($message) use($user) {
+                        $message->from('noreply@foi.rocks', 'FOI Buraz');
+                        $message->to($user->email, $user->ime);
+                        $message->subject(' 🌍 Na mladima svijet ostaje!');
+                    }
+                );
+                $this->info($user->name . " => SENT");
+            }
+            else $this->info($user->name . " => SKIPPING");
         }
     }
 }
