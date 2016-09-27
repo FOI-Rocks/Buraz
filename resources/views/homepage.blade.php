@@ -32,7 +32,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>O BURAZ PROJEKTU</h2>
                 <p>
-                    Ovo je eksperimentalni i neslužbeni projekt kojim spajamo dobrovoljce studente/ice starijih godina (tzv. velike buraze) koji žele podijeliti svoje savjete i iskustva iz prve ruke brucošima/cama (tzv. malim burazima).
+                    Ovo je neslužbeni projekt kojim spajamo dobrovoljce studente/ice starijih godina (tzv. velike buraze) koji žele podijeliti svoje savjete i iskustva iz prve ruke brucošima/cama (tzv. malim burazima).
                 </p>
                 <p>
                     Princip je vrlo jednostavan, stariji studenti/ce koji žele sudjelovati nasumično se dodijele svakom brucošu/ici koji zatraži svog buraza. Mali buraz tada dobije kontakt informacije (Facebook ime, e-mail, telefon) svog mentora kojem se može, ali i ne mora javiti. Svakako preporučamo da se javite svom velikom burazu kad vam se dodijeli, no to nije obavezno, on vam može biti u pripravnosti ako ga ikad zatreba.
