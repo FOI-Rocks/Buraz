@@ -90,7 +90,7 @@ class Student extends Model
                 $account = $this->user;
 
                 // Send e-mail to student
-                Mail::send('email.master', ['header' => 'Dodjeljen ti je Veliki Buraz!', 'paragraphs' => ['Nasumičnim odabirom ti je dodjeljen Veliki Buraz. Ispod možeš pronaći njegove/njezine kontakt podatke. Ukoliko imaš bilo kakvih pitanja ili ćeš ih imati kroz godinu, svog Velikog Buraza uvijek možeš pitati. :) Ako ti trenutno ništa ne pada na pamet, slobodno ga/ju pozdravi!', 'Ime: ' . $bigBro->name, 'E-mail: ' . $bigBro->email, 'Telefon: ' . $bigBro->mentor->phone,]], function ($message) use ($account) {
+                Mail::send('email.master', ['header' => 'Dodijeljen ti je Veliki Buraz!', 'paragraphs' => ['Nasumičnim odabirom ti je dodjeljen Veliki Buraz. Ispod možeš pronaći njegove/njezine kontakt podatke. Ukoliko imaš bilo kakvih pitanja ili ćeš ih imati kroz godinu, svog Velikog Buraza uvijek možeš pitati. :) Ako ti trenutno ništa ne pada na pamet, slobodno ga/ju pozdravi!', 'Ime: ' . $bigBro->name, 'E-mail: ' . $bigBro->email, 'Telefon: ' . $bigBro->mentor->phone,]], function ($message) use ($account) {
                         $message->from('noreply@foi.rocks', 'FOI Buraz');
                         $message->to($account->email, $account->name);
                         $message->subject('👥Dodijeljen ti je Veliki Buraz!');
