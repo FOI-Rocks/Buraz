@@ -56,12 +56,12 @@ class Mentor extends Model
                         'Nasumičnim odabirom ti je dodjeljen Mali Buraz. Ispod možeš pronaći njegove/njezine kontakt podatke. Prošle godine čak trećina Malih Buraza nije kontaktiralo svog mentora. Bilo bi odlično kada bi mu/joj se predstavio/la i upitao ga/ju ima li već sad kakvih pitanja kako mu/joj ne bi bilo neugodno!',
                         'Ime: ' . $studentUser->name,
                         'E-mail: ' . $studentUser->email,
-                        '< href="https://www.facebook.com/' . $studentUser->fbid . '">Facebook Profil</a>'
+                        'https://www.facebook.com/' . $studentUser->fbid
                     ]
                 ], function ($message) use ($account) {
                     $message->from('noreply@foi.rocks', 'FOI Buraz');
                     $message->to($account->email, $account->name);
-                    $message->subject('?Dodjeljen ti je Mali Buraz!');
+                    $message->subject('👥 Dodijeljen ti je Mali Buraz!');
                 });
 
                 $this->save();
