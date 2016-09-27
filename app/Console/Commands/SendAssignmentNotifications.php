@@ -41,8 +41,10 @@ class SendAssignmentNotifications extends Command
     {
         $students = Student::where('notified', false)->get();
         foreach($students as $s) {
-            $s->sendBigBroNotificationEmail(true);
-            $s->bigBro()->mentor->sendLittleBroNotificationEmail($s, true);
+            if($s->mentor_id !== null) {
+                $s->sendBigBroNotificationEmail(true);
+                $s->bigBro()->mentor->sendLittleBroNotificationEmail($s, true);
+            }
         }
 
     }
