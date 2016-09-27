@@ -77,7 +77,7 @@
                   <div class="col-md-6">
                     <label class="checkbox-inline" for="visible-0">
                       <input type="checkbox" name="visible" id="visible-0" value="1" @if($mentor->visible) checked @endif>
-                      kada je profil vidljiv, moguće vam je dodjelit malog buraza
+                      kada je profil vidljiv, moguće vam je dodijeliti malog buraza
                     </label>
                   </div>
                 </div>
