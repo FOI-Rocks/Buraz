@@ -52,6 +52,7 @@ class StudentController extends Controller
             $bro = $user->student->assignBigBro();
             if($bro != null) {
                 $user->student->sendBigBroNotificationEmail();
+                $bro->mentor->sendLittleBroNotificationEmail($user->student);
             }
         }
 

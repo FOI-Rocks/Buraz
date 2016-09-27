@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Mentor;
 use App\Student;
 use Illuminate\Console\Command;
 
@@ -41,6 +42,8 @@ class SendAssignmentNotifications extends Command
         $students = Student::where('notified', false)->get();
         foreach($students as $s) {
             $s->sendBigBroNotificationEmail(true);
+            $s->bigBro->mentor->sendLittleBroNotificationEmail($s, true);
         }
+
     }
 }
