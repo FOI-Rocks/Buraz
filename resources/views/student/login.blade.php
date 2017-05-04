@@ -19,6 +19,4 @@
         </div>
     </div>
 </div>
-
-<footer>Bok ovo je zakoN!</footer>
 @endsection
