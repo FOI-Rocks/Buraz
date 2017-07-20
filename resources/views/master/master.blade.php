@@ -70,7 +70,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; FOI Rocks 2015</p>
+            <p>Copyright &copy; FOI Rocks 2017</p>
         </div>
     </footer>
 

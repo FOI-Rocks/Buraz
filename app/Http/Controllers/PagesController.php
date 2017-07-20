@@ -18,7 +18,7 @@ class PagesController extends Controller
     public function index()
     {
         return view('homepage')
-            ->with('mentorNum', Mentor::count())
+            ->with('mentorNum', Mentor::where("visible", 1)->count())
             ->with('studentNum', Student::count());
     }
 
