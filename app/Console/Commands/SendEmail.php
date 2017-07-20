@@ -70,7 +70,7 @@ class SendEmail extends Command
 
         $this->info("=== Sending e-mail to mentors:");
         // Mentor feedback
-        $mentors = Mentor::where('id', '>', 76)->get();
+        $mentors = Mentor::all();
         foreach($mentors as $m) {
             $user = $m->user;
             if($user->email != NULL) {
