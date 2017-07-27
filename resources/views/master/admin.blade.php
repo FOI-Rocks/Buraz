@@ -11,7 +11,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet">
-    <link href="{{ asset("css/mentor.css") }}" rel="stylesheet">
+    <link href="{{ asset("css/admin.css") }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="{{ asset("font-awesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css">
@@ -27,45 +27,31 @@
 
 </head>
 
-<body>
+<body style="@yield('bodyStyle')">
 
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <img class="logo" src="{{ asset('img/logo.png') }}">
-                </li>
-                <li>
-                    <a href="{{ route('mentor.info') }}">Informacije</a>
-                </li>
-                <li>
-                    <a href="{{ route('mentor.profile') }}">Profil</a>
-                </li>
-                <li>
-                    <a href="{{ route('auth.logout') }}">Odjavi se</a>
-                </li>
-                @if(Auth::user()->admin)
-                <li>
-                    <a href="{{ route('admin.statistics') }}">Admin</a>
-                </li>
-                @endif
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <a href="#menu-toggle" class="btn btn-default visible-sm visible-xs" id="menu-toggle">Izbornik</a>
-                @yield('content')
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <img class="logo" src="{{ asset('img/logo.png') }}">
+            </li>
+            <li>
+                <a href="{{ route('admin.statistics') }}">Statistika</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.faces.little') }}">Mali burazi</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.faces.big') }}">Veliki burazi</a>
+            </li>
+            <li>
+                <a href="{{ route('auth.logout') }}">Odjavi se</a>
+            </li>
+        </ul>
     </div>
-    <!-- /#wrapper -->
+
+    <div id="wrapper" class="container">
+        @yield('content')
+    </div>
 
     <!-- jQuery -->
     <script src="{{ asset("js/jquery.js") }}"></script>
@@ -73,14 +59,6 @@
     <script src="{{ asset("js/bootstrap.min.js") }}"></script>
     <!-- Plugin JavaScript -->
     <script src="{{ asset("js/jquery.easing.min.js") }}"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
 
 </body>
 

@@ -46,6 +46,11 @@
                 <li>
                     <a href="{{ route('auth.logout') }}">Odjavi se</a>
                 </li>
+                @if(Auth::user()->admin)
+                    <li>
+                        <a href="{{ route('admin.statistics') }}">Admin</a>
+                    </li>
+                @endif
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->

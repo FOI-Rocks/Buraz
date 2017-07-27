@@ -55,3 +55,12 @@ Route::get('/anketa/mali-buraz', function() {
 Route::get('/anketa/veliki-buraz', function() {
     return view('forms.velikiburaz');
 });
+
+// Admin
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/admin', ['as' => 'admin.statistics', 'uses' => 'Admin\StatisticsController@getPage']);
+    Route::get('/admin/faces/little',
+        ['as' => 'admin.faces.little', 'uses' => 'Admin\FacesController@getLittleBrosFacesPage']);
+    Route::get('/admin/faces/big', ['as' => 'admin.faces.big', 'uses' => 'Admin\FacesController@getBigBrosFacesPage']);
+    Route::get('/admin/face/{userId}', ['as' => 'admin.face', 'uses' => 'Admin\FacesController@getSingleFace']);
+});

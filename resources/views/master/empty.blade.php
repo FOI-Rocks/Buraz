@@ -32,9 +32,9 @@
     @yield('content')
 
     <!-- jQuery -->
-    <script src="<?php __("js/jquery.js"); ?>"></script>
+    <script src="{{ asset("js/jquery.js") }}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="<?php __("js/bootstrap.min.js"); ?>"></script>
+    <script src="{{ asset("js/bootstrap.min.js") }}"></script>
     <!-- Plugin JavaScript -->
     <script src="{{ asset("js/jquery.easing.min.js") }}"></script>
 
