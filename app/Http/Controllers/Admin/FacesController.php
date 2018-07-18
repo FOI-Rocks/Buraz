@@ -19,16 +19,19 @@ class FacesController extends Controller
                 'ipiStudents' =>
                     Mentor::join('users', 'mentors.user_id', '=', 'users.id')
                         ->where('users.study_id', 1)
+                        ->where('mentors.visible', 1)
                         ->orderBy('users.created_at', 'DESC')
                         ->get(),
                 'epStudents' =>
                     Mentor::join('users', 'mentors.user_id', '=', 'users.id')
                         ->where('users.study_id', 2)
+                        ->where('mentors.visible', 1)
                         ->orderBy('users.created_at', 'DESC')
                         ->get(),
                 'pitupStudents' =>
                     Mentor::join('users', 'mentors.user_id', '=', 'users.id')
                         ->where('users.study_id', 3)
+                        ->where('mentors.visible', 1)
                         ->orderBy('users.created_at', 'DESC')
                         ->get()
             ]);
