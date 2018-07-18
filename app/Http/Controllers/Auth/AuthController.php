@@ -72,13 +72,14 @@ class AuthController extends Controller
                 return redirect()->route('student.info');
             }
         }
-
-        $account = User::create([
-            'fbid' => $user->getId(),
-            'name' => $user->getName(),
-            'email' => $user->getEmail(),
-            'avatar_url' => $user->getAvatar(),
-        ]);
+        else {
+            $account = User::create([
+                'fbid' => $user->getId(),
+                'name' => $user->getName(),
+                'email' => $user->getEmail(),
+                'avatar_url' => $user->getAvatar(),
+            ]);
+        }
 
         Auth::login($account);
 
