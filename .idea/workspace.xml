@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a8100fd-be29-42bd-a9fb-6262110911af" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/fb-login.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/fb-login.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/master/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mentor/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mentor/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mentor/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mentor/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/master.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="7a8100fd-be29-42bd-a9fb-6262110911af" name="Default" comment="" />
     <ignored path="buraz.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -66,15 +58,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/mentor/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="352">
-              <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+              <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
               <folding>
                 <element signature="e#197#223#0#HTML" expanded="true" />
                 <element signature="e#774#808#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendEmail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-27">
+              <caret line="82" column="367" selection-start-line="82" selection-start-column="367" selection-end-line="82" selection-end-column="367" />
             </state>
           </provider>
         </entry>
@@ -109,20 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="32" />
+            <state relative-caret-position="266">
+              <caret line="11" column="17" lean-forward="true" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -277,6 +269,24 @@
             <path>
               <item name="buraz" type="b2602c69:ProjectViewProjectNode" />
               <item name="buraz" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buraz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buraz" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buraz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buraz" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+              <item name="Commands" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="buraz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="buraz" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -404,12 +414,12 @@
       <option name="presentableId" value="Default" />
       <updated>1443038358342</updated>
       <workItem from="1531906072681" duration="551000" />
-      <workItem from="1563449111385" duration="696000" />
+      <workItem from="1563449111385" duration="1011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1247000" />
+    <option name="totallyTimeSpent" value="1562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-763" width="1920" height="1080" extended-state="0" />
@@ -571,13 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendEmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="90" column="63" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -752,13 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/homepage.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -800,11 +796,25 @@
     <entry file="file://$PROJECT_DIR$/resources/views/mentor/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
-          <caret line="16" column="57" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+          <caret line="16" column="55" lean-forward="true" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
           <folding>
             <element signature="e#197#223#0#HTML" expanded="true" />
             <element signature="e#774#808#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/SendEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="82" column="367" selection-start-line="82" selection-start-column="367" selection-end-line="82" selection-end-column="367" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="11" column="17" lean-forward="true" selection-end-line="26" />
         </state>
       </provider>
     </entry>

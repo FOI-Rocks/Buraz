@@ -38,6 +38,6 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_ID'),
         'client_secret' => env('FACEBOOK_SECRET'),
-        'redirect' => 'http://' . env('BASE_DOMAIN') . '/auth/facebook/callback',
+        'redirect' => 'https://' . env('BASE_DOMAIN') . '/auth/facebook/callback',
     ],
 ];
