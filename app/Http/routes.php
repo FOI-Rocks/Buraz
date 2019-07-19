@@ -63,4 +63,12 @@ Route::group(['middleware' => 'admin'], function () {
         ['as' => 'admin.faces.little', 'uses' => 'Admin\FacesController@getLittleBrosFacesPage']);
     Route::get('/admin/faces/big', ['as' => 'admin.faces.big', 'uses' => 'Admin\FacesController@getBigBrosFacesPage']);
     Route::get('/admin/face/{userId}', ['as' => 'admin.face', 'uses' => 'Admin\FacesController@getSingleFace']);
+    Route::get('/admin/settings', ['as' => 'admin.settings', 'uses' => 'Admin\SettingsController@getSettingsPage']);
+    Route::get('/admin/settings/setStudentsAsMentors', ['as' => 'admin.settings.setStudentsAsMentors', 'uses' => 'Admin\SettingsController@setStudentsAsMentors']);
+    Route::get('/admin/settings/truncateStudentsTable', ['as' => 'admin.settings.truncateStudentsTable', 'uses' => 'Admin\SettingsController@truncateStudentsTable']);
+    Route::get('/admin/settings/setMentorsAsInactive', ['as' => 'admin.settings.setMentorsAsInactive', 'uses' => 'Admin\SettingsController@setMentorsAsInactive']);
+    Route::get('/admin/settings/resetStudentCount', ['as' => 'admin.settings.resetStudentCount', 'uses' => 'Admin\SettingsController@resetStudentCount']);
+    Route::get('/admin/settings/sendEmailsToMentors', ['as' => 'admin.settings.sendEmailsToMentors', 'uses' => 'Admin\SettingsController@sendEmailsToMentors']);
+    Route::get('/admin/settings/setMatching', ['as' => 'admin.settings.setMatching', 'uses' => 'Admin\SettingsController@setMatching']);
+    Route::get('/admin/settings/notifyMatch', ['as' => 'admin.settings.notifyMatch', 'uses' => 'Admin\SettingsController@notifyMatch']);
 });

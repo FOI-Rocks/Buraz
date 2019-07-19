@@ -16,7 +16,7 @@
             </div>
             <br>
             <div class="statistic">
-                <div class="value">{{ round($ipiStudents/$ipiMentors*100) }}%</div>
+                <div class="value">{{ $ipiStats }}%</div>
                 <div class="label">Omjer IPS</div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             </div>
             <br>
             <div class="statistic">
-                <div class="value">{{ round($epStudents/$epMentors*100) }}%</div>
+                <div class="value">{{ $epStats }}%</div>
                 <div class="label">Omjer EP</div>
             </div>
         </div>
@@ -48,7 +48,7 @@
             </div>
             <br>
             <div class="statistic">
-                <div class="value">{{ round($pitupStudents/$pitupMentors*100) }}%</div>
+                <div class="value">{{ $pitupStats }}%</div>
                 <div class="label">Omjer PITUP</div>
             </div>
         </div>

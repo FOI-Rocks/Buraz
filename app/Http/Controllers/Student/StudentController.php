@@ -57,7 +57,9 @@ class StudentController extends Controller
         }
 
         return redirect()
-            ->route('student.profile');
+            ->route('student.profile', [
+                'saved' => true
+            ]);
     }
 
     public function showInfo() {

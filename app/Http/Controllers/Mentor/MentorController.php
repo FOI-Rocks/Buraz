@@ -61,7 +61,9 @@ class MentorController extends Controller
         $user->mentor->save();
 
         return redirect()
-            ->route('mentor.profile');
+            ->route('mentor.profile',[
+                'saved' => true
+            ]);
     }
 
     public function showInfo() {

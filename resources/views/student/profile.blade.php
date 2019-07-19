@@ -3,6 +3,13 @@
 @section('header') Profil - Mali Buraz @endsection
 
 @section('content')
+    @if(request('saved'))
+        <div class="row">
+            <div class="alert alert-primary" role="alert" id="alert">
+                Profil spremljen!
+            </div>
+        </div>
+    @endif
 <div class="row">
     <div class="col-lg-12 text-center">
         <h1>Profil</h1>
@@ -69,4 +76,19 @@
         </form>
     </div>
 </div>
+    <script>
+        var fadeTarget = document.getElementById("alert");
+        setTimeout(function () {
+            var fadeEffect = setInterval(function () {
+                if (!fadeTarget.style.opacity) {
+                    fadeTarget.style.opacity = 1;
+                }
+                if (fadeTarget.style.opacity > 0) {
+                    fadeTarget.style.opacity -= 0.1;
+                } else {
+                    clearInterval(fadeEffect);
+                }
+            }, 50);
+        }, 2 * 1000);
+    </script>
 @endsection

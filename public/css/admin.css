@@ -220,6 +220,32 @@
 .statistic.inverted {
 	color: white;
 }
+/****** Settings page ******/
+#console-log{
+	height: 400px;
+	width: calc(94% - 250px);
+	background: #cecece;
+	color: black;
+	position: fixed;
+	bottom: 1em;
+	margin: auto;
+	max-width: 75%;
+	padding: 10px;
+	overflow-y: auto;
+}
+.btn-dark{
+	color: #fff;
+	background-color: #343a40;
+	border-color: #343a40;
+}
+.mt-2{
+	margin-top: 2em;
+}
+.btn.btn-dark:hover, .btn.btn-dark:focus{
+	color: #ccd6d6;
+}
+/****** End of settings page ******/
+
 /****** Bootstrap Colors ******/
 /****** Bootstrap Typography ******/
 /****** Footer ******/

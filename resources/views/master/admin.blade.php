@@ -44,6 +44,9 @@
                 <a href="{{ route('admin.faces.big') }}">Veliki burazi</a>
             </li>
             <li>
+                <a href="{{ route('admin.settings') }}">Postavke</a>
+            </li>
+            <li>
                 <a href="{{ route('auth.logout') }}">Odjavi se</a>
             </li>
         </ul>
