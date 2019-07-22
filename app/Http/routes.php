@@ -71,4 +71,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/settings/sendEmailsToMentors', ['as' => 'admin.settings.sendEmailsToMentors', 'uses' => 'Admin\SettingsController@sendEmailsToMentors']);
     Route::get('/admin/settings/setMatching', ['as' => 'admin.settings.setMatching', 'uses' => 'Admin\SettingsController@setMatching']);
     Route::get('/admin/settings/notifyMatch', ['as' => 'admin.settings.notifyMatch', 'uses' => 'Admin\SettingsController@notifyMatch']);
+    Route::get('/admin/email', ['as' => 'admin.email', 'uses' => 'Admin\EmailController@getPage']);
+    Route::post('/admin/email/sendEmail', ['as' => 'admin.email.sendEmail', 'uses' => 'Admin\EmailController@sendEmail']);
 });

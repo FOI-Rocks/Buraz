@@ -87,6 +87,14 @@
 	background: none;
 }
 
+.alert-primary{
+	color: #ffffff;
+	background-color: #5cb85c;
+	border-color: #5cb85c;
+	text-align: center;
+	margin: auto;
+}
+
 @media(min-width:768px) {
 	#wrapper {
 		padding-left: 250px;

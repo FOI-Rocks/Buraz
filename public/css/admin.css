@@ -246,6 +246,25 @@
 }
 /****** End of settings page ******/
 
+/****** Email page ******/
+.message-body{
+	margin: 10px;
+	min-height: 400px;
+}
+.message-body > textarea{
+	width: 100%;
+	min-height: 400px;
+	padding: 10px;
+}
+.alert-primary{
+	color: #ffffff;
+	background-color: #5cb85c;
+	border-color: #5cb85c;
+	text-align: center;
+	margin: auto;
+}
+/****** End of email page ******/
+
 /****** Bootstrap Colors ******/
 /****** Bootstrap Typography ******/
 /****** Footer ******/
