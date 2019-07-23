@@ -43,7 +43,7 @@ class StatisticsController extends Controller
         $pitupStudents = Student::join('users', 'students.user_id', '=', 'users.id')
                 ->where('users.study_id', 3)
                 ->count();
-        $pitupMentors = 0;Mentor::join('users', 'mentors.user_id', '=', 'users.id')
+        $pitupMentors = Mentor::join('users', 'mentors.user_id', '=', 'users.id')
             ->where('users.study_id', 3)
             ->where('mentors.visible', 1)
             ->count();
