@@ -12,9 +12,9 @@
         <div class="row">
             <h5> Kome želiš poslati? </h5>
             <div id="radio-recipients" class="col-md-9">
-                <input type="radio" name="mentori" value="mentori"> Mentori<br>
-                <input type="radio" name="studenti" value="studenti"> Studenti<br>
-                <input type="radio" name="svi" value="svi"> Svi<br>
+                <input type="radio" name="primatelj" value="mentori"> Mentori<br>
+                <input type="radio" name="primatelj" value="studenti"> Studenti<br>
+                <input type="radio" name="primatelj" value="svi"> Svi<br>
             </div>
             <div class="col-md-3 mt-2 text-right">
                 <button type="button" onclick="checkInput();" class="btn btn-dark">Pošalji
